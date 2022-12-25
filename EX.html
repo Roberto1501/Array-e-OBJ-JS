@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       const data = [
+{
+nome: 'Roger Medeiros',
+sexo: 'M',
+salario: 3250,
+},
+{
+nome: 'Carolina Silva',
+sexo: 'F',
+salario: 1200,
+},
+{
+nome: 'Cristina Avila',
+sexo: 'F',
+salario: 8100,
+},
+{
+nome: 'Gustavo Hoffman',
+sexo: 'M',
+salario: 5200.35,
+},
+{
+nome: 'Eva Trindade',
+sexo: 'F',
+salario: 2501,
+},
+{
+nome: 'Andre Mathias',
+sexo: 'M',
+salario: 1750,
+},
+{
+nome: 'Joice Castro da Silva',
+sexo: 'F',
+salario: 3350.25,
+},
+];
+
+
+/*  1. Imprima no console a quantidade de pessoas Total.
+2. Imprima no console a quantidade de pessoas pessoas do sexo
+Feminino.
+3. Imprima no console a soma do salário de todas as pessoas.
+4. Imprima no console a soma do salario de todos as pessoas do sexo
+Masculino
+5. Utilize a função Some, para descobrir se existe algum salário
+superior a R$ 7.000, imprima verdadeiro no console caso exista, caso
+contrário falso.
+6. Utilize a função findIndex, para descobrir a posição da pessoa de
+nome 'Eva Trindade'.
+7. Utilize a função filter, para filtrar todas pessoas que o nome possua o
+sobrenome "Silva".
+8. Imprima os nomes utilizando o MAP */
+let contador = 0
+let pTot = data.map((value)=> {
+
+   return contador++
+   
+})
+console.log( 'Número de pessoas igual a '+ contador)
+let contador2 = 0
+let pTotF = data.map((value)=> {
+    if(value.sexo==='F'){
+        contador2++
+
+    }
+
+})
+console.log('O número de estudantes de mulheres '+ contador2)
+let salarioP = 0
+let salarioTot = data.map((value2)=> salarioP+=value2.salario)
+console.log('O salario total das pessoas é: '+salarioP)
+
+let salarioM = 0
+let salarioTotM = data.map((value3)=>{
+    if(value3.sexo=='M'){
+        salarioM+=value3.salario
+    }
+})
+console.log('A soma dos salarios dos homens da lista é: '+ salarioM)
+
+let salario7k = data.some((value)=> value.salario>7000) 
+console.log(salario7k)
+
+let woman = (element)=> element.nome == 'Eva Trindade'
+console.log(data.findIndex(woman))
+
+
+const result = data.filter(obj => obj.nome.includes('Silva'))
+console.log(result)
+
+
+let nomesTodos = data.map(value=> console.log(value.nome))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
